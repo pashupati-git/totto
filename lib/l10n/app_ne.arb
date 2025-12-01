@@ -1,0 +1,506 @@
+{
+  "@@locale": "ne",
+  "language": "भाषा",
+  "chooseLanguage": "आफ्नो मनपर्ने भाषा छान्नुहोस् र जारी राख्नुहोस्",
+  "continueButton": "जारी राख्नुहोस्",
+  "nextButton": "अर्को",
+  "getStartedButton": "सुरु गर्नुहोस्",
+  "okButton": "ठिक छ",
+  "cancel": "रद्द गर्नुहोस्",
+  "close": "बन्द गर्नुहोस्",
+  "save": "सेभ गर्नुहोस्",
+  "deleteButton": "मेटाउनुहोस्",
+  "updateButton": "अपडेट गर्नुहोस्",
+  "and": " र ",
+  "select": "छान्नुहोस्",
+  "unit": "एकाइ",
+  "onboarding1Title": "दुर्लभ उत्पादनहरूमा पहुँच",
+  "onboarding1Subtitle": "विश्वसनीय विक्रेताहरूबाट उच्च-माग र पाउन गाह्रो सामानहरू पत्ता लगाउनुहोस्।",
+  "onboarding2Title": "सुरक्षित, प्रमाणित, र पारदर्शी",
+  "onboarding2Subtitle": "हामी सुरक्षालाई प्राथमिकता दिन्छौं ताकि तपाईंको व्यवसाय \n सहज रूपमा चल्छ।",
+  "onboarding3Title": "स्मार्ट व्यापार गर्न तयार हुनुहुन्छ?",
+  "onboarding3Subtitle": "टोटोमा सामेल हुनुहोस् र नयाँ व्यापार \n अवसरहरू खोल्नुहोस्।",
+  "navHome": "गृह",
+  "navChat": "च्याट",
+  "navOrder": "अर्डर",
+  "navMarketplace": "बजार",
+  "navProfile": "प्रोफाइल",
+  "verificationCode": "प्रमाणीकरण कोड",
+  "enterCodeSentTo": "{phoneNumber} मा पठाइएको कोड प्रविष्ट गर्नुहोस्",
+  "@enterCodeSentTo": {
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String"
+      }
+    }
+  },
+  "verify": "प्रमाणित गर्नुहोस्",
+  "didNotReceiveCode": "कोड प्राप्त भएन?",
+  "resendOtp": "OTP फेरि पठाउनुहोस्",
+  "resendOtpIn": "{countdown}s मा OTP फेरि पठाउनुहोस्",
+  "@resendOtpIn": {
+    "placeholders": {
+      "countdown": {
+        "type": "String"
+      }
+    }
+  },
+  "failedToResendOtp": "OTP फेरि पठाउन असफल भयो।",
+  "invalidOtp": "अमान्य OTP। कृपया फेरि प्रयास गर्नुहोस्।",
+  "otpVerification": "OTP प्रमाणीकरण",
+  "enterYourPhoneNumber": "आफ्नो फोन नम्बर प्रविष्ट गर्नुहोस्",
+  "mobileNumber": "मोबाइल नम्बर",
+  "getOtp": "OTP प्राप्त गर्नुहोस्",
+  "failedToSendOtp": "OTP पठाउन असफल भयो। कृपया फेरि प्रयास गर्नुहोस्।",
+  "enterValid10DigitNumber": "कृपया १०-अङ्कको मान्य नम्बर प्रविष्ट गर्नुहोस्।",
+  "byLoggingInYouAgree": "लग इन गरेर, तपाईं टोटोको\n",
+  "privacyPolicyDot": "गोपनीयता नीतिमा सहमत हुनुहुन्छ।",
+  "homeHeaderTitlePart1": "सँग बुद्धिमानीपूर्वक किन्नुहोस् र बेच्नुहोस् ",
+  "homeHeaderTitlePart2": "टोटो।",
+  "homeHeaderSubtitle": "चाहे तपाईं आवश्यक वस्तुहरू किन्दै हुनुहुन्छ वा आफ्नो अद्वितीय सूची सूचीकृत गर्दै हुनुहुन्छ, टोटोले सही व्यक्तिहरूलाई एकसाथ ल्याउँछ।",
+  "startSelling": "बिक्री सुरु गर्नुहोस्",
+  "buyProducts": "उत्पादनहरू किन्नुहोस्",
+  "discoverGroupsTitle": "समूहहरू खोज्नुहोस् र व्यवस्थापन गर्नुहोस्",
+  "discoverGroupsSubtitle": "किन्न, बेच्न, र नेटवर्क गर्नको लागि आफ्नो व्यापार समुदायहरूमा तुरुन्तै जानुहोस्।",
+  "chatBazaar": "च्याट बजार",
+  "essentialTier": "आवश्यक टियर",
+  "standardTier": "मानक टियर",
+  "premiumTier": "प्रिमियम टियर",
+  "viewButton": "हेर्नुहोस्",
+  "joinButton": "सामेल हुनुहोस्",
+  "activeChats": "सक्रिय च्याटहरू",
+  "noActiveChats": "तपाईंको सक्रिय समूह च्याटहरू यहाँ देखा पर्नेछन्।",
+  "errorCouldNotLoadChatBazaar": "च्याट बजार लोड गर्न सकिएन: {error}",
+  "@errorCouldNotLoadChatBazaar": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorLoadingGroups": "समूहहरू लोड गर्दा त्रुटि भयो: {error}",
+  "@errorLoadingGroups": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "noNewGroupsToJoin": "यस टियरमा सामेल हुनका लागि कुनै नयाँ समूहहरू छैनन्।",
+  "createNewChatGroup": "नयाँ च्याट समूह बनाउनुहोस्",
+  "successfullyJoinedGroup": "\"{groupName}\" मा सफलतापूर्वक सामेल हुनुभयो!",
+  "@successfullyJoinedGroup": {
+    "placeholders": {
+      "groupName": {
+        "type": "String"
+      }
+    }
+  },
+  "newGroupTitle": "नयाँ समूह",
+  "enterGroupName": "समूहको नाम प्रविष्ट गर्नुहोस्",
+  "groupRules": "समूहका नियमहरू / दिशानिर्देशहरू",
+  "groupRulesHint": "यस समूहका लागि कुनै पनि आन्तरिक नियम वा टिप्पणीहरू लेख्नुहोस्...",
+  "selectGroupTier": "समूहको टियर चयन गर्नुहोस्",
+  "selectBusinessType": "व्यवसायको प्रकार चयन गर्नुहोस्",
+  "uploadIcon": "आइकन अपलोड गर्नुहोस् वा छान्नुहोस्",
+  "createGroup": "समूह बनाउनुहोस्",
+  "creatingGroup": "बनाउँदै...",
+  "groupCreatedSuccess": "समूह सफलतापूर्वक सिर्जना भयो!",
+  "groupCreationError": "कृपया समूहको नाम भर्नुहोस् र व्यवसायको प्रकार चयन गर्नुहोस्।",
+  "errorCouldNotLoadCategories": "श्रेणीहरू लोड गर्न सकिएन: {error}",
+  "@errorCouldNotLoadCategories": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "failedToLoadMessages": "सन्देशहरू लोड गर्न असफल: {error}",
+  "@failedToLoadMessages": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "today": "आज",
+  "messageHint": "सन्देश..",
+  "chatSettingsTitle": "च्याट सेटिङहरू",
+  "participants": "{count} सहभागीहरू",
+  "@participants": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "groupMembers": "समूह सदस्यहरू",
+  "editName": "नाम सम्पादन गर्नुहोस्",
+  "contactInfo": "सम्पर्क जानकारी",
+  "muteNotifications": "सूचनाहरू बन्द गर्नुहोस्",
+  "leaveGroup": "समूह छोड्नुहोस्",
+  "deleteGroup": "समूह मेटाउनुहोस्",
+  "editGroupNameTitle": "समूहको नाम सम्पादन गर्नुहोस्",
+  "newGroupNameHint": "नयाँ समूहको नाम",
+  "leaveGroupDialogTitle": "समूह छोड्नुहोस्",
+  "leaveGroupDialogContent": "के तपाई साँच्चै यो समूह छोड्न चाहनुहुन्छ?",
+  "leaveGroupSuccess": "तपाईंले समूह छोड्नुभयो।",
+  "leaveGroupError": "त्रुटि: यस समूहमा तपाईंको सदस्यता फेला परेन।",
+  "couldNotGetUser": "प्रयोगकर्ता डाटा प्राप्त गर्न सकिएन। कृपया फेरि प्रयास गर्नुहोस्।",
+  "deleteGroupDialogTitle": "समूह मेटाउनुहोस्",
+  "deleteGroupDialogContent": "के तपाई साँच्चै यो समूह स्थायी रूपमा मेटाउन चाहनुहुन्छ? यो कार्यलाई पूर्ववत गर्न सकिँदैन।",
+  "groupDeletedSuccess": "समूह मेटाइएको छ।",
+  "groupNameUpdatedSuccess": "समूहको नाम अपडेट भयो!",
+  "addMembers": "सदस्यहरू थप्नुहोस्",
+  "admin": "व्यवस्थापक",
+  "member": "सदस्य",
+  "makeMember": "सदस्य बनाउनुहोस्",
+  "makeAdmin": "व्यवस्थापक बनाउनुहोस्",
+  "removeMember": "सदस्य हटाउनुहोस्",
+  "marketplaceTitle": "बजार",
+  "noProductsFound": "कुनै उत्पादनहरू फेला परेनन्",
+  "failedToLoadProducts": "उत्पादनहरू लोड गर्न असफल भयो: {error}",
+  "@failedToLoadProducts": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "vendorLabel": "विक्रेता: {vendorName}",
+  "@vendorLabel": {
+    "placeholders": {
+      "vendorName": {
+        "type": "String"
+      }
+    }
+  },
+  "productDetailErrorTitle": "त्रुटि",
+  "failedToLoadProduct": "उत्पादन लोड गर्न असफल: {error}",
+  "@failedToLoadProduct": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "orderNow": "अहिले अर्डर गर्नुहोस्",
+  "chatSeller": "विक्रेतासँग कुरा गर्नुहोस्",
+  "productDetailsOf": "{productName} को उत्पादन विवरण",
+  "@productDetailsOf": {
+    "placeholders": {
+      "productName": {
+        "type": "String"
+      }
+    }
+  },
+  "addToMarket": "बजारमा थप्नुहोस्",
+  "enterProductName": "उत्पादनको नाम प्रविष्ट गर्नुहोस्",
+  "productName": "उत्पादनको नाम",
+  "uploadProductCatalogs": "उत्पादन क्याटलगहरू अपलोड गर्नुहोस्",
+  "clickToUploadCatalogs": "क्याटलगहरू अपलोड गर्न क्लिक गर्नुहोस्",
+  "uploadProductImages": "उत्पादन छविहरू अपलोड गर्नुहोस्",
+  "clickToUploadImages": "छविहरू अपलोड गर्न क्लिक गर्नुहोस्",
+  "price": "मूल्य",
+  "priceExample": "उदाहरण १०.००",
+  "remarks": "टिप्पणी (सन्देश)",
+  "writeSomething": "केहि लेख्नुहोस्...",
+  "addProduct": "उत्पादन थप्नुहोस्",
+  "pleaseSelectAUnit": "कृपया एकाइ छान्नुहोस्।",
+  "pleaseSelectACategory": "कृपया श्रेणी छान्नुहोस्।",
+  "priceCannotBeEmpty": "मूल्य खाली हुन सक्दैन।",
+  "myOrderTitle": "मेरो अर्डर",
+  "orderDeletedSuccess": "अर्डर सफलतापूर्वक मेटाइयो",
+  "deleteError": "मेटाउन त्रुटि: {error}",
+  "@deleteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "statusUpdatedSuccess": "स्थिति सफलतापूर्वक अपडेट भयो!",
+  "updateError": "अपडेटमा त्रुटि: {error}",
+  "@updateError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "tabDelivered": "डेलिभर भयो",
+  "tabReceived": "प्राप्त भयो",
+  "noOrdersFound": "कुनै अर्डरहरू फेला परेन।",
+  "noOrdersMatchFilter": "हालको फिल्टरसँग मिल्ने कुनै अर्डरहरू छैनन्।",
+  "updateOrderStatusTitle": "अर्डर स्थिति अपडेट गर्नुहोस्",
+  "updateOrderStatusContent": "यस अर्डरको लागि नयाँ स्थिति छान्नुहोस्:",
+  "markAsShipped": "पठाइएको रूपमा चिन्ह लगाउनुहोस्",
+  "markAsDelivered": "डेलिभर भएको रूपमा चिन्ह लगाउनुहोस्",
+  "deleteOrderTitle": "अर्डर मेटाउनुहोस्",
+  "deleteOrderContent": "के तपाई साँच्चै यो अर्डर मेटाउन चाहनुहुन्छ? यो कार्यलाई पूर्ववत गर्न सकिँदैन।",
+  "updateStatusButton": "स्थिति अपडेट गर्नुहोस्",
+  "buyerLabel": "क्रेता: {name}",
+  "@buyerLabel": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "स्थिति: {status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "quantityLabel": "मात्रा: {quantity} एकाइहरू",
+  "@quantityLabel": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      }
+    }
+  },
+  "orderNumberLabel": "अर्डर {number}",
+  "@orderNumberLabel": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "tierLabel": "टियर: {tier}",
+  "@tierLabel": {
+    "placeholders": {
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "urgencyLabel": "तत्कालिनता: {urgency}",
+  "@urgencyLabel": {
+    "placeholders": {
+      "urgency": {
+        "type": "String"
+      }
+    }
+  },
+  "orderPlacementTitle": "अर्डर प्लेसमेन्ट",
+  "updateOrderTitle": "अर्डर अपडेट गर्नुहोस्",
+  "productNameCannotBeEmpty": "उत्पादनको नाम खाली हुन सक्दैन।",
+  "quantityCannotBeEmpty": "मात्रा खाली हुन सक्दैन।",
+  "pleaseEnterValidQuantity": "कृपया मान्य मात्रा प्रविष्ट गर्नुहोस्।",
+  "orderUpdatedSuccess": "अर्डर सफलतापूर्वक अपडेट भयो!",
+  "orderPlacedSuccess": "अर्डर सफलतापूर्वक राखियो!",
+  "errorUpdatingOrder": "अर्डर अपडेट गर्दा त्रुटि भयो",
+  "errorPlacingOrder": "अर्डर राख्दा त्रुटि भयो",
+  "unknownError": "एक अज्ञात त्रुटि भयो।",
+  "requestForQuotation": "कोटेशनको लागि अनुरोध",
+  "enterQuantity": "मात्रा प्रविष्ट गर्नुहोस्*",
+  "productUrgency": "उत्पादनको तत्कालिनता*",
+  "selectUrgency": "तत्कालिनता चयन गर्नुहोस्",
+  "searchTitle": "खोज्नुहोस्",
+  "searchButton": "खोज्नुहोस्",
+  "tabAll": "सबै",
+  "tabGroup": "समूह",
+  "tabProduct": "उत्पादन",
+  "tabPeople": "व्यक्तिहरू",
+  "location": "स्थान",
+  "entireNepal": "सम्पूर्ण नेपाल",
+  "priceRange": "मूल्य दायरा",
+  "priceRangeTo": "देखि",
+  "category": "श्रेणी",
+  "results": "परिणामहरू ({count})",
+  "@results": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "noResultsFound": "कुनै परिणाम फेला परेन",
+  "@noResultsFound": {
+    "description": "खोजले कुनै परिणाम नदिँदा प्रदर्शन गर्ने पाठ"
+  },
+  "errorOccurred": "एउटा त्रुटि भयो: {error}",
+  "@errorOccurred": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "profilePageTitle": "प्रोफाइल",
+  "myOrders": "मेरो अर्डरहरू",
+  "myOrdersSubtitle": "अर्डरहरू ट्र्याक गर्नुहोस्",
+  "profileVisibility": "प्रोफाइल दृश्यता",
+  "profileVisibilitySubtitle": "प्रोफाइल लुकाउनुहोस्",
+  "kycDetails": "KYC विवरणहरू",
+  "kycDetailsSubtitle": "आफ्नो KYC विवरणहरू हेर्नुहोस् र सम्पादन गर्नुहोस्",
+  "appSettings": "एप सेटिङहरू",
+  "appSettingsSubtitle": "भाषा, एप प्राथमिकताहरू",
+  "termsAndConditions": "नियम तथा सर्तहरू",
+  "privacyPolicy": "गोपनीयता नीति",
+  "logout": "लग आउट गर्नुहोस्",
+  "logoutConfirmationTitle": "लग आउट गर्नुहोस्",
+  "logoutConfirmationBody": "के तपाईँ निश्चित रूपमा लग आउट गर्न चाहनुहुन्छ?",
+  "changeLanguage": "भाषा परिवर्तन गर्नुहोस्",
+  "order": "अर्डरहरू",
+  "mySpecialItemTitle": "मेरो उत्पादन",
+  "mySpecialItemSubtitle": "उत्पादन",
+  "usagePolicySubtitle": "उपयोग नीति",
+  "dataUseInfoSubtitle": "डाटा प्रयोग जानकारी",
+  "tottoPointsTitle": "टोटो पोइन्ट्स",
+  "learnMore": "थप जान्नुहोस्",
+  "updateProfile": "प्रोफाइल अपडेट गर्नुहोस्",
+  "changeUserDetails": "प्रयोगकर्ता विवरण परिवर्तन गर्नुहोस्",
+  "changeAvatar": "अवतार परिवर्तन गर्नुहोस्",
+  "avatarUpdatedSuccess": "अवतार सफलतापूर्वक अपडेट भयो!",
+  "avatarUpdateFailed": "अवतार अपडेट गर्न असफल भयो। कृपया फेरि प्रयास गर्नुहोस्।",
+  "userNotLoggedIn": "प्रयोगकर्ता लग इन भएको छैन।",
+  "errorFetchingKyc": "KYC स्थिति ल्याउन त्रुटि भयो: {error}",
+  "@errorFetchingKyc": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorLoadingProfile": "प्रोफाइल लोड गर्दा त्रुटि भयो: {error}",
+  "@errorLoadingProfile": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationSettings": "सूचना सेटिङहरू",
+  "orderUpdates": "अर्डर अपडेटहरू",
+  "newMessages": "नयाँ सन्देशहरू",
+  "groupActivity": "समूह गतिविधि",
+  "notificationSound": "सूचना ध्वनि",
+  "defaultSound": "टोटो पूर्वनिर्धारित ध्वनि",
+  "appearance": "रूप",
+  "lightTheme": "उज्यालो",
+  "darkTheme": "अँध्यारो",
+  "profileVisibilityTitle": "प्रोफाइल दृश्यता",
+  "accountVisibility": "खाता दृश्यता",
+  "privateAccount": "निजी खाता",
+  "publicAccount": "सार्वजनिक खाता",
+  "privateAccountInfo": "तपाईंको प्रोफाइल केवल तपाईंको जडान भएका समूहहरूमा मात्र देखिनेछ।",
+  "privateAccountSuggestion": "तपाईंको प्रोफाइल हाल निजी छ। थप विक्रेताहरूसँग जडान गर्न आफ्नो सेटिङहरू अपडेट गर्नुहोस्।",
+  "publicAccountInfo": "तपाईंको प्रोफाइल केवल यिनीहरूलाई मात्र देखिनेछ :",
+  "allUsers": "सबै प्रयोगकर्ताहरू",
+  "verifiedVendorsOnly": "प्रमाणित विक्रेताहरू मात्र",
+  "myGroupsOnly": "मेरो समूहहरू मात्र",
+  "englishLanguage": "English (US)",
+  "nepaliLanguage": "Nepali",
+  "englishSubtitle": "(English)",
+  "nepaliSubtitle": "(नेपाली)",
+  "englishAndNepali": "English and नेपाली",
+  "languageMixedSubtitle": "",
+  "kycErrorTitle": "त्रुटि",
+  "kycErrorLoadingStatus": "KYC स्थिति लोड गर्न सकिएन: {error}",
+  "@kycErrorLoadingStatus": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "kycRejectedMessage": "तपाईंको अघिल्लो आवेदन अस्वीकृत भयो। कृपया आफ्नो विवरणहरू समीक्षा गरी फारम फेरि बुझाउनुहोस्।",
+  "kycFormTitle": "टोटो KYC फारम",
+  "kycVerifiedTitle": "KYC प्रमाणित",
+  "kycVerifiedContent": "तपाईंको KYC सफलतापूर्वक प्रमाणित भएको छ।",
+  "kycAlreadyVerified": "तपाईंको KYC पहिले नै प्रमाणित छ",
+  "updateKycInformation": "KYC जानकारी अपडेट गर्नुहोस्",
+  "kycSubmittedTitle": "KYC पेश गरियो",
+  "kycSubmittedContent": "तपाईंको KYC विवरणहरू हाल समीक्षा अन्तर्गत छन्।",
+  "kycPendingReview": "तपाईंको KYC विवरणहरू पेश गरिएको छ र हाल समीक्षामा छ।",
+  "kycErrorLoadingData": "डाटा लोड गर्दा त्रुटि भयो: {error}",
+  "@kycErrorLoadingData": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "kycBasicInformation": "आधारभूत जानकारी",
+  "kycFullName": "पूरा नाम",
+  "kycDobHint": "DD/MM/YYYY",
+  "kycChooseGender": "लिंग छान्नुहोस्",
+  "kycMale": "पुरुष",
+  "kycFemale": "महिला",
+  "kycOther": "अन्य",
+  "kycAddPhoneNumber": "फोन नम्बर थप्नुहोस्",
+  "kycAddEmailAddress": "इमेल ठेगाना थप्नुहोस्",
+  "kycNextButton": "अर्को",
+  "kycPermanentAddress": "स्थायी ठेगाना",
+  "kycProvince": "प्रदेश",
+  "kycDistrict": "जिल्ला",
+  "kycMunicipality": "नगरपालिका / गाउँपालिका",
+  "kycWardNumber": "वडा नम्बर",
+  "kycToleStreetArea": "टोल / सडक / क्षेत्रको नाम",
+  "kycCurrentAddress": "हालको ठेगाना",
+  "kycSameAsPermanent": "स्थायी जस्तै",
+  "kycIdentityVerification": "पहिचान प्रमाणीकरण",
+  "kycChooseDocument": "कागजात छान्नुहोस्",
+  "kycCitizenship": "नागरिकता",
+  "kycPassport": "राहदानी",
+  "kycDriversLicense": "सवारी चालक अनुमतिपत्र",
+  "kycDocumentNumber": "कागजात नम्बर",
+  "kycUploadDocumentImage": "कागजातको छवि अपलोड गर्नुहोस्",
+  "kycUploadDocFront": "कागजातको अगाडिको भाग अपलोड गर्नुहोस्",
+  "kycUploadDocBack": "कागजातको पछाडिको भाग अपलोड गर्नुहोस्",
+  "kycUploadButton": "कागजात अपलोड गर्नुहोस्",
+  "kycChangeButton": "कागजात परिवर्तन गर्नुहोस्",
+  "kycUploadVideoButton": "भिडियो अपलोड गर्नुहोस्",
+  "kycChangeVideoButton": "भिडियो परिवर्तन गर्नुहोस्",
+  "kycUploadShopVideo": "आफ्नो पसलको भिडियो अपलोड गर्नुहोस्",
+  "kycBusinessDetails": "व्यापार विवरण",
+  "kycForVendorsOnly": "(विक्रेताहरूको लागि मात्र - सशर्त)",
+  "kycBusinessName": "व्यापारको नाम",
+  "kycPanVatNumber": "PAN/VAT नम्बर (यदि लागू भएमा)",
+  "kycUploadBusinessLicense": "व्यापार इजाजतपत्र अपलोड गर्नुहोस् (वैकल्पिक)",
+  "kycAgreement": "म पुष्टि गर्दछु कि माथिको जानकारी सही छ र टोटोको KYC सर्तहरूमा सहमत छु।",
+  "kycSubmitButton": "KYC पेश गर्नुहोस्",
+  "kycSubmittingButton": "पेश गर्दै...",
+  "kycSuccessTitle": "सफलता",
+  "kycSuccessMessage": "तपाईंको KYC विवरणहरू पेश गरिएको छ।",
+  "kycGoToHome": "गृह पृष्ठमा जानुहोस्",
+  "kycSubmissionFailed": "पेश गर्न असफल: {error}",
+  "@kycSubmissionFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "orderDetailsTitle": "अर्डर विवरण",
+  "errorLabel": "त्रुटि",
+  "errorLoadingOrderDetails": "अर्डर विवरण लोड गर्न असफल: {error}",
+  "dateLabel": "मिति",
+  "goChatButton": "च्याटमा जानुहोस्",
+  "sellerInfoNotAvailable": "यस अर्डरको लागि बिक्रेता जानकारी उपलब्ध छैन।",
+  "findingGroup": "सम्बन्धित समूह खोज्दै...",
+  "noMatchingGroupFound": "यो उत्पादनको लागि कुनै मिल्ने समूह भेटिएन।",
+  "multipleGroupsFound": "एकभन्दा बढी मिल्ने समूहहरू भेटियो। अगाडि बढ्न सकिँदैन।",
+  "errorFindingGroup": "समूह खोज्दा त्रुटि भयो: {error}",
+  "myProductsTitle": "मेरा उत्पादनहरू",
+  "noProductsYet": "तपाईंले अहिलेसम्म कुनै उत्पादनहरू सिर्जना गर्नुभएको छैन।",
+  "editProduct": "उत्पादन सम्पादन गर्नुहोस्",
+  "deleteProduct": "उत्पादन मेटाउनुहोस्",
+  "deleteProductConfirmationTitle": "उत्पादन मेटाउने हो?",
+  "deleteProductConfirmationMessage": "के तपाईं निश्चित रूपमा यो उत्पादन स्थायी रूपमा मेटाउन चाहनुहुन्छ? यो कार्यलाई फिर्ता लिन सकिँदैन।",
+  "cancelButtonLabel": "रद्द गर्नुहोस्",
+  "deleteButtonLabel": "मेटाउनुहोस्",
+  "productDeletedSuccessfully": "उत्पादन सफलतापूर्वक मेटाइयो।",
+  "anErrorOccurred": "एउटा त्रुटि भयो। कृपया फेरि प्रयास गर्नुहोस्।",
+  "priceIsNegotiable": "मूल्य वार्ता योग्य छ",
+  "or": "वा",
+  "signInWithGoogle": "Google बाट साइन इन गर्नुहोस्",
+  "googleSignInFailed": "Google साइन-इन असफल भयो। कृपया फेरि प्रयास गर्नुहोस्।",
+  "noMessagesYet": "अहिलेसम्म कुनै सन्देश छैन। नमस्ते भन्नुहोस्!"
+}

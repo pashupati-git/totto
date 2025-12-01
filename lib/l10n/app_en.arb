@@ -1,0 +1,541 @@
+{
+  "@@locale": "en",
+  "language": "Language",
+  "chooseLanguage": "Choose your preferred language and continue",
+  "continueButton": "Continue",
+  "nextButton": "Next",
+  "getStartedButton": "Get Started",
+  "okButton": "OK",
+  "cancel": "Cancel",
+  "close": "Close",
+  "save": "Save",
+  "deleteButton": "Delete",
+  "updateButton": "Update",
+  "and": " and ",
+  "select": "Select",
+  "unit": "Unit",
+  "onboarding1Title": "Access Rare Products",
+  "onboarding1Subtitle": "Discover high-demand, hard-to-find goods from trusted vendors.",
+  "onboarding2Title": "Safe, Verified, and Transparent",
+  "onboarding2Subtitle": "We prioritize security so your business \n runs smoothly.",
+  "onboarding3Title": "Ready to Trade Smarter?",
+  "onboarding3Subtitle": "Join Totto and unlock new business \n opportunities.",
+  "navHome": "Home",
+  "navChat": "Chat",
+  "navOrder": "Order",
+  "navMarketplace": "Marketplace",
+  "navProfile": "Profile",
+  "verificationCode": "Verification Code",
+  "enterCodeSentTo": "Enter the code sent to {phoneNumber}",
+  "@enterCodeSentTo": {
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String"
+      }
+    }
+  },
+  "verify": "Verify",
+  "didNotReceiveCode": "Didn't receive code?",
+  "resendOtp": "Resend OTP",
+  "resendOtpIn": "Resend OTP in {countdown}s",
+  "@resendOtpIn": {
+    "placeholders": {
+      "countdown": {
+        "type": "String"
+      }
+    }
+  },
+  "failedToResendOtp": "Failed to resend OTP.",
+  "invalidOtp": "Invalid OTP. Please try again.",
+  "otpVerification": "OTP Verification",
+  "enterYourPhoneNumber": "Enter Your Phone Number",
+  "mobileNumber": "Mobile Number",
+  "getOtp": "Get OTP",
+  "failedToSendOtp": "Failed to send OTP. Please try again.",
+  "enterValid10DigitNumber": "Please enter a valid 10-digit number.",
+  "byLoggingInYouAgree": "By logging in, you agree to Totto’s\n",
+  "homeHeaderTitlePart1": "Buy and Sell Smarter with ",
+  "homeHeaderTitlePart2": "Totto.",
+  "homeHeaderSubtitle": "Whether you're buying essentials or listing your unique inventory, Totto brings the right people together.",
+  "startSelling": "Start Selling",
+  "buyProducts": "Buy Products",
+  "discoverGroupsTitle": "Discover & Manage Groups",
+  "discoverGroupsSubtitle": "Quickly jump into your business communities for buying, selling, and networking.",
+  "chatBazaar": "Chat Bazaar",
+  "essentialTier": "Essential Tier",
+  "standardTier": "Standard Tier",
+  "premiumTier": "Premium Tier",
+  "viewButton": "View",
+  "joinButton": "Join",
+  "activeChats": "Active Chats",
+  "noActiveChats": "Your active group chats will appear here.",
+  "errorCouldNotLoadChatBazaar": "Could not load Chat Bazaar: {error}",
+  "@errorCouldNotLoadChatBazaar": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorLoadingGroups": "Error loading groups: {error}",
+  "@errorLoadingGroups": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "noNewGroupsToJoin": "No new groups to join in this tier.",
+  "createNewChatGroup": "Create New Chat Group",
+  "successfullyJoinedGroup": "Successfully joined \"{groupName}\"!",
+  "@successfullyJoinedGroup": {
+    "placeholders": {
+      "groupName": {
+        "type": "String"
+      }
+    }
+  },
+  "newGroupTitle": "New Group",
+  "enterGroupName": "Enter Group Name",
+  "groupRules": "Groups Rules / Guidelines",
+  "groupRulesHint": "Write any internal rules or notes for this group...",
+  "selectGroupTier": "Select Group Tier",
+  "selectBusinessType": "Select Business Type",
+  "uploadIcon": "Upload or choose icon",
+  "createGroup": "Create Group",
+  "creatingGroup": "Creating...",
+  "groupCreatedSuccess": "Group created successfully!",
+  "groupCreationError": "Please fill in the group name and select a business type.",
+  "errorCouldNotLoadCategories": "Could not load categories: {error}",
+  "@errorCouldNotLoadCategories": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "failedToLoadMessages": "Failed to load messages: {error}",
+  "@failedToLoadMessages": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "today": "Today",
+  "messageHint": "message..",
+  "chatSettingsTitle": "Chat Settings",
+  "participants": "{count} participants",
+  "@participants": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "groupMembers": "Group Members",
+  "editName": "Edit Name",
+  "contactInfo": "Contact info",
+  "muteNotifications": "Mute notifications",
+  "leaveGroup": "Leave Group",
+  "deleteGroup": "Delete Group",
+  "editGroupNameTitle": "Edit Group Name",
+  "newGroupNameHint": "New group name",
+  "leaveGroupDialogTitle": "Leave Group",
+  "leaveGroupDialogContent": "Are you sure you want to leave this group?",
+  "leaveGroupSuccess": "You have left the group.",
+  "leaveGroupError": "Error: Could not find your membership in this group.",
+  "couldNotGetUser": "Could not get user data. Please try again.",
+  "deleteGroupDialogTitle": "Delete Group",
+  "deleteGroupDialogContent": "Are you sure you want to permanently delete this group? This action cannot be undone.",
+  "groupDeletedSuccess": "Group has been deleted.",
+  "groupNameUpdatedSuccess": "Group name updated!",
+  "addMembers": "Add Members",
+  "admin": "Admin",
+  "member": "Member",
+  "makeMember": "Make Member",
+  "makeAdmin": "Make Admin",
+  "removeMember": "Remove Member",
+  "marketplaceTitle": "Marketplace",
+  "noProductsFound": "No products found",
+  "failedToLoadProducts": "Failed to load products: {error}",
+  "@failedToLoadProducts": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "vendorLabel": "Vendor: {vendorName}",
+  "@vendorLabel": {
+    "placeholders": {
+      "vendorName": {
+        "type": "String"
+      }
+    }
+  },
+  "productDetailErrorTitle": "Error",
+  "failedToLoadProduct": "Failed to load product: {error}",
+  "@failedToLoadProduct": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "orderNow": "Order Now",
+  "chatSeller": "Chat Seller",
+  "productDetailsOf": "Product details of {productName}",
+  "@productDetailsOf": {
+    "placeholders": {
+      "productName": {
+        "type": "String"
+      }
+    }
+  },
+  "addToMarket": "Add to Market",
+  "enterProductName": "Enter Product Name",
+  "productName": "Product name",
+  "uploadProductCatalogs": "Upload Product Catalogs",
+  "clickToUploadCatalogs": "Click to upload Catalogs",
+  "uploadProductImages": "Upload Product Images",
+  "clickToUploadImages": "Click to upload Images",
+  "price": "Price",
+  "priceExample": "E.g 10.00",
+  "remarks": "Remarks (Message)",
+  "writeSomething": "Write Something...",
+  "addProduct": "Add Product",
+  "pleaseSelectAUnit": "Please select a unit.",
+  "pleaseSelectACategory": "Please select a category.",
+  "priceCannotBeEmpty": "Price cannot be empty.",
+  "myOrderTitle": "My Order",
+  "orderDeletedSuccess": "Order deleted successfully",
+  "deleteError": "Delete Error: {error}",
+  "@deleteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "statusUpdatedSuccess": "Status updated successfully!",
+  "updateError": "Update Error: {error}",
+  "@updateError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "tabDelivered": "Delivered",
+  "tabReceived": "Received",
+  "noOrdersFound": "No orders found.",
+  "noOrdersMatchFilter": "There are no orders matching the current filter.",
+  "updateOrderStatusTitle": "Update Order Status",
+  "updateOrderStatusContent": "Choose the new status for this order:",
+  "markAsShipped": "Mark as Shipped",
+  "markAsDelivered": "Mark as Delivered",
+  "deleteOrderTitle": "Delete Order",
+  "deleteOrderContent": "Are you sure you want to delete this order? This action cannot be undone.",
+  "updateStatusButton": "Update Status",
+  "buyerLabel": "Buyer: {name}",
+  "@buyerLabel": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "statusLabel": "Status: {status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "quantityLabel": "Quantity: {quantity} Units",
+  "@quantityLabel": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      }
+    }
+  },
+  "orderNumberLabel": "Order {number}",
+  "@orderNumberLabel": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "tierLabel": "Tier: {tier}",
+  "@tierLabel": {
+    "placeholders": {
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "urgencyLabel": "Urgency: {urgency}",
+  "@urgencyLabel": {
+    "placeholders": {
+      "urgency": {
+        "type": "String"
+      }
+    }
+  },
+  "orderPlacementTitle": "Order Placement",
+  "updateOrderTitle": "Update Order",
+  "productNameCannotBeEmpty": "Product name cannot be empty.",
+  "quantityCannotBeEmpty": "Quantity cannot be empty.",
+  "pleaseEnterValidQuantity": "Please enter a valid quantity.",
+  "orderUpdatedSuccess": "Order updated successfully!",
+  "orderPlacedSuccess": "Order placed successfully!",
+  "errorUpdatingOrder": "Error Updating Order",
+  "errorPlacingOrder": "Error Placing Order",
+  "unknownError": "An unknown error occurred.",
+  "requestForQuotation": "Request for Quotation",
+  "enterQuantity": "Enter Quantity*",
+  "productUrgency": "Product Urgency*",
+  "selectUrgency": "Select Urgency",
+  "searchTitle": "Search",
+  "searchButton": "Search",
+  "tabAll": "All",
+  "tabGroup": "Group",
+  "tabProduct": "Product",
+  "tabPeople": "People",
+  "location": "Location",
+  "entireNepal": "Entire Nepal",
+  "priceRange": "Price Range",
+  "priceRangeTo": "to",
+  "category": "Category",
+  "results": "Results ({count})",
+  "@results": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "noResultsFound": "No results found",
+  "@noResultsFound": {
+    "description": "Text to display when a search yields no results"
+  },
+  "errorOccurred": "An error occurred: {error}",
+  "@errorOccurred": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "profilePageTitle": "Profile",
+  "myOrders": "My Orders",
+  "myOrdersSubtitle": "Track orders",
+  "profileVisibility": "Profile visibility",
+  "profileVisibilitySubtitle": "Hide Profile",
+  "kycDetails": "KYC Details",
+  "kycDetailsSubtitle": "View and Edit your KYC Details",
+  "appSettings": "App Settings",
+  "appSettingsSubtitle": "Language, App preferences",
+  "termsAndConditions": "Terms & Conditions",
+  "privacyPolicy": "Privacy Policy",
+  "privacyPolicyDot": "Privacy Policy.",
+  "logout": "Log Out",
+  "logoutConfirmationTitle": "Log Out",
+  "logoutConfirmationBody": "Are you sure you want to log out?",
+  "changeLanguage": "Change Language",
+  "englishLanguage": "English (US)",
+  "nepaliLanguage": "Nepali",
+  "englishSubtitle": "(English)",
+  "nepaliSubtitle": "(नेपाली)",
+  "englishAndNepali": "English and नेपाली",
+  "languageMixedSubtitle": "",
+  "order": "Order",
+  "mySpecialItemTitle": "My Products",
+  "mySpecialItemSubtitle": "Products",
+  "usagePolicySubtitle": "Usage policy",
+  "dataUseInfoSubtitle": "Data use info",
+  "tottoPointsTitle": "Totto Points",
+  "learnMore": "Learn More",
+  "updateProfile": "Update Profile",
+  "changeUserDetails": "Change User Details",
+  "changeAvatar": "Change Avatar",
+  "avatarUpdatedSuccess": "Avatar updated successfully!",
+  "avatarUpdateFailed": "Avatar update failed. Please try again.",
+  "userNotLoggedIn": "User not logged in.",
+  "errorFetchingKyc": "Error fetching KYC status: {error}",
+  "@errorFetchingKyc": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorLoadingProfile": "Error loading profile: {error}",
+  "@errorLoadingProfile": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationSettings": "Notification Settings",
+  "orderUpdates": "Order Updates",
+  "newMessages": "New Messages",
+  "groupActivity": "Group Activity",
+  "notificationSound": "Notification Sound",
+  "defaultSound": "Totto Default Sound",
+  "appearance": "Appearance",
+  "lightTheme": "Light",
+  "darkTheme": "Dark",
+  "profileVisibilityTitle": "Profile Visibility",
+  "accountVisibility": "Account Visibility",
+  "privateAccount": "Private Account",
+  "publicAccount": "Public Account",
+  "privateAccountInfo": "Your Profile is only visible to your connected groups.",
+  "privateAccountSuggestion": "Your profile is currently private. Update your settings to connect with more vendors.",
+  "publicAccountInfo": "Your Profile is only visible to :",
+  "allUsers": "All Users",
+  "verifiedVendorsOnly": "Verified Vendors Only",
+  "myGroupsOnly": "My Groups Only",
+  "kycErrorTitle": "Error",
+  "kycErrorLoadingStatus": "Could not load KYC status: {error}",
+  "@kycErrorLoadingStatus": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "kycRejectedMessage": "Your previous submission was rejected. Please review your details and submit the form again.",
+  "kycFormTitle": "Totto KYC Form",
+  "kycVerifiedTitle": "KYC Verified",
+  "kycVerifiedContent": "Your KYC has been successfully verified.",
+  "kycAlreadyVerified": "Your KYC is Already Verified",
+  "updateKycInformation": "Update KYC Information",
+  "kycSubmittedTitle": "KYC Submitted",
+  "kycSubmittedContent": "Your KYC details are currently under review.",
+  "kycPendingReview": "Your KYC details have been submitted and are currently under review.",
+  "kycErrorLoadingData": "Error loading data: {error}",
+  "@kycErrorLoadingData": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "kycBasicInformation": "Basic Information",
+  "kycFullName": "Full Name",
+  "kycDobHint": "DD/MM/YYYY",
+  "kycChooseGender": "Choose Gender",
+  "kycMale": "Male",
+  "kycFemale": "Female",
+  "kycOther": "Other",
+  "kycAddPhoneNumber": "Add Phone Number",
+  "kycAddEmailAddress": "Add Email Address",
+  "kycNextButton": "Next",
+  "kycPermanentAddress": "Permanent Address",
+  "kycProvince": "Province",
+  "kycDistrict": "District",
+  "kycMunicipality": "Municipality / Rural Municipality",
+  "kycWardNumber": "Ward Number",
+  "kycToleStreetArea": "Tole / Street / Area Name",
+  "kycCurrentAddress": "Current Address",
+  "kycSameAsPermanent": "Same as permanent",
+  "kycIdentityVerification": "Identity Verification",
+  "kycChooseDocument": "Choose Document",
+  "kycCitizenship": "Citizenship",
+  "kycPassport": "Passport",
+  "kycDriversLicense": "Driver's License",
+  "kycDocumentNumber": "Document Number",
+  "kycUploadDocumentImage": "Upload Document Image",
+  "kycUploadDocFront": "Upload Document Front",
+  "kycUploadDocBack": "Upload Document Back",
+  "kycUploadButton": "Upload Document",
+  "kycChangeButton": "Change Document",
+  "kycUploadVideoButton": "Upload Video",
+  "kycChangeVideoButton": "Change Video",
+  "kycUploadShopVideo": "Upload Videos of your shop",
+  "kycBusinessDetails": "Business Details",
+  "kycForVendorsOnly": "(For vendors only - conditional)",
+  "kycBusinessName": "Business Name",
+  "kycPanVatNumber": "PAN/VAT Number (if applicable)",
+  "kycUploadBusinessLicense": "Upload Business License (Optional)",
+  "kycAgreement": "I confirm that the above information is accurate and agree to Totto's KYC terms.",
+  "kycSubmitButton": "Submit KYC",
+  "kycSubmittingButton": "Submitting...",
+  "kycSuccessTitle": "Success",
+  "kycSuccessMessage": "Your KYC details have been submitted.",
+  "kycGoToHome": "Go to Home",
+  "kycSubmissionFailed": "Submission Failed: {error}",
+  "@kycSubmissionFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "orderDetailsTitle": "Order Details",
+  "errorLabel": "Error",
+  "errorLoadingOrderDetails": "Failed to load order details: {error}",
+  "@errorLoadingOrderDetails": {
+    "description": "Error message when order details fail to load",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "dateLabel": "Date",
+  "goChatButton": "Go Chat",
+  "sellerInfoNotAvailable": "Seller information is not available for this order.",
+  "findingGroup": "Finding relevant group...",
+  "noMatchingGroupFound": "No matching group was found for this product.",
+  "multipleGroupsFound": "More than one matching group was found. Cannot proceed.",
+  "errorFindingGroup": "Error finding group: {error}",
+  "myProductsTitle": "My Products",
+  "noProductsYet": "You have not created any products yet.",
+  "editProduct": "Edit Product",
+  "@editProduct": {
+    "description": "Button text for editing a product"
+  },
+  "deleteProduct": "Delete Product",
+  "@deleteProduct": {
+    "description": "Button text for deleting a product"
+  },
+  "deleteProductConfirmationTitle": "Delete Product?",
+  "@deleteProductConfirmationTitle": {
+    "description": "Title of the dialog asking for confirmation to delete a product"
+  },
+  "deleteProductConfirmationMessage": "Are you sure you want to permanently delete this product? This action cannot be undone.",
+  "@deleteProductConfirmationMessage": {
+    "description": "The message inside the delete confirmation dialog"
+  },
+  "cancelButtonLabel": "Cancel",
+  "@cancelButtonLabel": {
+    "description": "Generic button label to cancel an action"
+  },
+  "deleteButtonLabel": "Delete",
+  "@deleteButtonLabel": {
+    "description": "Generic button label to confirm a delete action"
+  },
+  "productDeletedSuccessfully": "Product deleted successfully",
+  "@productDeletedSuccessfully": {
+    "description": "Snackbar message shown after a product is deleted"
+  },
+  "anErrorOccurred": "An error occurred. Please try again.",
+  "@anErrorOccurred": {
+    "description": "Generic error message for snackbars"
+  },
+  "priceIsNegotiable": "Price Is Negotiable",
+  "@priceIsNegotiable": {
+    "description": "Checkbox label to indicate if the order price can be negotiated"
+  },
+  "or": "OR",
+  "signInWithGoogle": "Sign in with Google",
+  "googleSignInFailed": "Google Sign-In failed. Please try again.",
+  "noMessagesYet": "No messages yet. Say hello!"
+}
