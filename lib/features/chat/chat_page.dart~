@@ -313,34 +313,6 @@ class _ActiveChatTile extends ConsumerWidget {
         }
     }
 
-
-    Widget _buildTile(BuildContext context, WidgetRef ref, Group groupForNav, String displayName) {
-        // We no longer need to find the 'otherUser', so we don't need to check currentUser here.
-
-        return Material(
-            child: ListTile(
-                leading: const CircleAvatar(radius: 22, child: Icon(Icons.group)),
-                title: Text(displayName, style: const TextStyle(fontWeight: FontWeight.w500)),
-                onTap: () {
-                    final params = ChatConnectionParams(
-                        type: ChatType.group,
-                        id: groupForNav.id,
-                    );
-
-                    // Directly navigate to IndividualChatPage regardless of member count
-                    Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) => IndividualChatPage(
-                                group: groupForNav,
-                                params: params,
-                            ),
-                        ),
-                    );
-                },
-            ),
-        );
-    }
-
     // Widget _buildTile(BuildContext context, WidgetRef ref, Group groupForNav, String displayName) {
     //     final currentUser = ref.watch(authStateChangesProvider).value;
     //
