@@ -389,7 +389,7 @@ abstract class AppLocalizations {
   /// No description provided for @essentialTier.
   ///
   /// In en, this message translates to:
-  /// **'Essential Tier'**
+  /// **'Open Market'**
   String get essentialTier;
 
   /// No description provided for @standardTier.

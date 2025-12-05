@@ -1,21 +1,26 @@
 
 import 'package:flutter/material.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:totto/common/appbar/common_app_bar.dart';
-import 'package:totto/common/common_search_bar.dart';
-import 'package:totto/common/constants/colors.dart';
+import 'package:totto/features/chat/providers/group_provider.dart';
+import 'package:totto/features/auth/providers/auth_providers.dart';
+import 'package:totto/features/chat/websocket/domain/chat_connection_params.dart';
+import 'package:totto/l10n/app_localizations.dart';
+
+//group things
 import 'package:totto/data/models/group_member_model.dart';
 import 'package:totto/data/models/group_model.dart';
-import 'package:totto/features/auth/providers/auth_providers.dart';
+
+//common + features
+import 'package:totto/features/search/search_page.dart';
+import 'package:totto/common/common_search_bar.dart';
+import 'package:totto/common/constants/colors.dart';
+
+//here pages are there
 import 'package:totto/features/chat/essential_tier_page.dart';
 import 'package:totto/features/chat/individual_chat_page.dart';
 import 'package:totto/features/chat/personal_message_page.dart';
-import 'package:totto/features/chat/providers/group_provider.dart';
-import 'package:totto/features/chat/websocket/domain/chat_connection_params.dart';
-import 'package:totto/features/search/search_page.dart';
-import 'package:totto/l10n/app_localizations.dart';
 
-import '../notification/notification_page.dart';
 
 class ChatPage extends ConsumerWidget {
     const ChatPage({super.key});
