@@ -264,20 +264,6 @@ final filteredMyProductsProvider = Provider.autoDispose<AsyncValue<List<Product>
       ).toList();
     }
 
-    // Sort: Draft products (status != 'P') first, then published products (status == 'P')
-    filteredList.sort((a, b)
-    {
-      bool aIsPublished = a.status == 'P';
-      bool bIsPublished = b.status == 'P';
-
-      // If 'a' is draft and 'b' is published, 'a' comes first (return -1)
-      if (!aIsPublished && bIsPublished) return -1;
-      // If 'a' is published and 'b' is draft, 'b' comes first (return 1)
-      if (aIsPublished && !bIsPublished) return 1;
-      // If both have same status, maintain original order
-      return 0;
-    });
-
     return filteredList;
   }
   );
