@@ -171,7 +171,6 @@
 //     }
 // }
 
-
 // Modified Esential tier Page
 // import 'package:flutter/material.dart';
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -427,7 +426,6 @@
 
 // Updated Latest Code
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:totto/common/appbar/common_app_bar.dart';
@@ -463,12 +461,19 @@ class EssentialTierPage extends ConsumerWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: Text(l10n.chatBazaar, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+        title: Text(
+          l10n.chatBazaar,
+          style: const TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         actions: const [SizedBox(width: 56)],
       ),
       body: allGroupsAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (err, stack) => Center(child: Text(l10n.errorLoadingGroups(err.toString()))),
+        error: (err, stack) =>
+            Center(child: Text(l10n.errorLoadingGroups(err.toString()))),
         data: (allGroups) {
           return SingleChildScrollView(
             child: Padding(
@@ -484,8 +489,6 @@ class EssentialTierPage extends ConsumerWidget {
                   _buildCreateGroupButton(context, l10n),
                   const SizedBox(height: 14),
 
-
-
                   // Groups List
                   ListView.builder(
                     shrinkWrap: true,
@@ -496,8 +499,6 @@ class EssentialTierPage extends ConsumerWidget {
                       return _GroupTile(group: group);
                     },
                   ),
-
-
                 ],
               ),
             ),
@@ -514,15 +515,17 @@ class EssentialTierPage extends ConsumerWidget {
         const SizedBox(width: 12),
         ElevatedButton(
           onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const SearchPage()),
-            );
+            Navigator.of(
+              context,
+            ).push(MaterialPageRoute(builder: (context) => const SearchPage()));
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color(0xFFDC143C),
             foregroundColor: Colors.white,
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
           ),
           child: Text(l10n.searchButton),
         ),
@@ -533,9 +536,9 @@ class EssentialTierPage extends ConsumerWidget {
   Widget _buildCreateGroupButton(BuildContext context, AppLocalizations l10n) {
     return OutlinedButton(
       onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => CreateNewGroupPage()),
-        );
+        Navigator.of(
+          context,
+        ).push(MaterialPageRoute(builder: (context) => CreateNewGroupPage()));
       },
       style: OutlinedButton.styleFrom(
         backgroundColor: Colors.white,
@@ -545,12 +548,14 @@ class EssentialTierPage extends ConsumerWidget {
       ),
       child: Text(
         l10n.createNewChatGroup,
-        style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        style: const TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
 }
-
 
 // condition for if grop member is less than or equal to 2, navigation was for individual.
 // class _GroupTile extends ConsumerWidget {
@@ -608,7 +613,6 @@ class EssentialTierPage extends ConsumerWidget {
 //   }
 // }
 
-
 class _GroupTile extends ConsumerWidget {
   final Group group;
   const _GroupTile({required this.group});
@@ -624,27 +628,33 @@ class _GroupTile extends ConsumerWidget {
       color: Colors.white,
       child: ListTile(
         leading: const CircleAvatar(radius: 22, child: Icon(Icons.group)),
-        title: Text(group.name, style: const TextStyle(fontWeight: FontWeight.w500)),
+        title: Text(
+          group.name,
+          style: const TextStyle(fontWeight: FontWeight.w500),
+        ),
         onTap: () async {
           // 1. Auto-join group logic
           if (currentUser != null) {
-            await ref.read(joinGroupProvider(group.id).notifier).joinGroup(groupId: group.id);
+            await ref
+                .read(joinGroupProvider(group.id).notifier)
+                .joinGroup(groupId: group.id);
           }
 
           // Check if context is valid after the async operation
           if (!context.mounted) return;
 
           // 2. Prepare params
-          final params = ChatConnectionParams(type: ChatType.group, id: group.id);
+          final params = ChatConnectionParams(
+            type: ChatType.group,
+            id: group.id,
+          );
 
           // 3. Navigate directly to IndividualChatPage (Group View)
           // The conditional check for memberCount <= 2 has been removed.
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => IndividualChatPage(
-                group: group,
-                params: params,
-              ),
+              builder: (context) =>
+                  IndividualChatPage(group: group, params: params),
             ),
           );
         },

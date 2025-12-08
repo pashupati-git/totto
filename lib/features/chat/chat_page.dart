@@ -21,6 +21,9 @@ import 'package:totto/features/chat/essential_tier_page.dart';
 import 'package:totto/features/chat/individual_chat_page.dart';
 import 'package:totto/features/chat/personal_message_page.dart';
 
+import '../home/home_screen.dart';
+import '../notification/notification_page.dart';
+
 
 class ChatPage extends ConsumerWidget {
     const ChatPage({super.key});
@@ -34,30 +37,30 @@ class ChatPage extends ConsumerWidget {
         final currentUser = ref.watch(authStateChangesProvider).value;
 
         return Scaffold(
-          // // appBar: AppBar(
-          // //   toolbarHeight: 100.0,
-          // //   backgroundColor: MainColors.appbarbackground,
-          // //   elevation: 5,
-          // //   shadowColor: Colors.black.withOpacity(0.05),
-          // //   shape: const RoundedRectangleBorder(
-          // //     borderRadius: BorderRadius.vertical(bottom: Radius.circular(40)),
-          // //   ),
-          // //   leadingWidth: 140,
-          // //   leading: Padding(
-          // //     padding: const EdgeInsets.only(left: 16.0),
-          // //     child: Image.asset('assets/logos/tottologo.png', fit: BoxFit.contain),
-          // //   ),
-          //   actions: [
-          //     IconButton(
-          //       icon: Image.asset('assets/logos/notification.png', width: 28, height: 28),
-          //       onPressed: ()
-          //       {
-          //         Navigator.of(context).push(MaterialPageRoute(builder: (context) => NotificationPage()),);
-          //       },
-          //     ),
-          //     const SizedBox(width: 8),
-          //   ],
-          // ),
+           appBar: AppBar(
+               toolbarHeight: 100.0,
+               backgroundColor: MainColors.appbarbackground,
+               elevation: 5,
+               shadowColor: Colors.black.withOpacity(0.05),
+               shape: const RoundedRectangleBorder(
+                   borderRadius: BorderRadius.vertical(bottom: Radius.circular(40)),
+               ),
+               leadingWidth: 140,
+               leading: Padding(
+                   padding: const EdgeInsets.only(left: 16.0),
+                   child: Image.asset('assets/logos/tottologo.png', fit: BoxFit.contain),
+               ),
+               actions: [
+                   IconButton(
+                       icon: Image.asset('assets/logos/notification.png', width: 28, height: 28),
+                       onPressed: ()
+                       {
+                           Navigator.of(context).push(MaterialPageRoute(builder: (context) => NotificationPage()),);
+                       },
+                   ),
+                   const SizedBox(width: 8),
+               ],
+           ),
           body: SingleChildScrollView(
               child: Column(
                   children: [

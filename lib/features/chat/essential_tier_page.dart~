@@ -551,6 +551,8 @@ class EssentialTierPage extends ConsumerWidget {
   }
 }
 
+
+// condition for if grop member is less than or equal to 2, navigation was for individual.
 // class _GroupTile extends ConsumerWidget {
 //   final Group group;
 //   const _GroupTile({required this.group});
