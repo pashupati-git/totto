@@ -1,0 +1,8 @@
+class ApiConfig
+{
+    static const String baseUrl = 'http://182.93.94.221:8000';
+    static const String webSocketLegacyHost = 'http://127.0.0.1:8000';
+}
+//ws://182.93.94.221:8000/ws/groupchat/{{groupId}}/?token={auth_token}
+
+
