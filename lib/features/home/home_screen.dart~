@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen>
         return Scaffold(
             backgroundColor: const Color(0xFFfafafa),
 
-            appBar: (_selectedIndex == 0 || _selectedIndex == 1 ) ? _buildAppBar() : null,
+            appBar: (_selectedIndex == 0  ) ? _buildAppBar() : null,
 
             body: IndexedStack(
                 index: _selectedIndex,

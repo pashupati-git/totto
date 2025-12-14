@@ -1,0 +1,421 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:totto/common/appbar/common_app_bar.dart';
+import 'package:totto/data/models/group_model.dart';
+import 'package:totto/features/auth/providers/auth_providers.dart';
+import 'package:totto/features/chat/individual_chat_page.dart';
+import 'package:totto/features/chat/providers/group_provider.dart';
+import 'package:totto/features/chat/websocket/domain/chat_connection_params.dart';
+import 'package:totto/l10n/app_localizations.dart';
+
+class GroupHistoryPage extends ConsumerWidget {
+  const GroupHistoryPage({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    final allGroupsAsync = ref.watch(allGroupsProvider);
+    final myGroupsAsync = ref.watch(myGroupsProvider);
+    final currentUser = ref.watch(authStateChangesProvider).value;
+
+    return Scaffold(
+      backgroundColor: const Color(0xFFF1F2F6),
+      appBar: CommonAppBar(
+        height: 60.0,
+        backgroundColor: const Color(0xFFF1F2F6),
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: const Text(
+          'Group History',
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        actions: const [SizedBox(width: 56)],
+      ),
+      body: allGroupsAsync.when(
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (err, stack) => Center(
+          child: Text('Error loading groups: ${err.toString()}'),
+        ),
+        data: (allGroups) {
+          return myGroupsAsync.when(
+            loading: () => const Center(child: CircularProgressIndicator()),
+            error: (err, stack) => Center(
+              child: Text('Error loading my groups: ${err.toString()}'),
+            ),
+            data: (myGroups) {
+              // Get current user ID as string
+              final currentUserId = currentUser?.id?.toString() ?? '';
+
+              // Filter groups into three categories
+              final myCreatedGroups = <Group>[];
+              final myJoinedGroups = <Group>[];
+
+              for (var group in myGroups) {
+                // Debug print to see what we're comparing
+                print('Group: ${group.name}');
+                print('  isCreator: ${group.isCreator}');
+                print('  userRole: ${group.userRole}');
+                print('  createdBy: ${group.createdBy}');
+                print('  currentUserId: $currentUserId');
+
+                // Check if user is creator using multiple conditions
+                final isGroupCreator =
+                    group.isCreator == true ||
+                        group.userRole?.toLowerCase() == 'creator' ||
+                        group.userRole?.toUpperCase() == 'C' ||
+                        (currentUserId.isNotEmpty && group.createdBy == currentUserId);
+
+                print('  -> isGroupCreator: $isGroupCreator\n');
+
+                if (isGroupCreator) {
+                  myCreatedGroups.add(group);
+                } else {
+                  myJoinedGroups.add(group);
+                }
+              }
+
+              final availableGroups = allGroups.where((group) {
+                return !myGroups.any((myGroup) => myGroup.id == group.id);
+              }).toList();
+
+              return SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // // Section 1: My Created Groups
+                      // _buildSectionHeader(
+                      //   context,
+                      //   'My Groups',
+                      //   myCreatedGroups.length,
+                      // ),
+                      // const SizedBox(height: 12),
+                      // if (myCreatedGroups.isEmpty)
+                      //   _buildEmptyState('You haven\'t created any groups yet')
+                      // else
+                      //   ListView.builder(
+                      //     shrinkWrap: true,
+                      //     physics: const NeverScrollableScrollPhysics(),
+                      //     itemCount: myCreatedGroups.length,
+                      //     itemBuilder: (context, index) {
+                      //       final group = myCreatedGroups[index];
+                      //       return _GroupTile(
+                      //         group: group,
+                      //         actionType: GroupTileAction.view,
+                      //       );
+                      //     },
+                      //   ),
+                      // const SizedBox(height: 24),
+
+                      // Section 2: Groups I've Joined
+                      _buildSectionHeader(
+                        context,
+                        'Joined Groups',
+                        myJoinedGroups.length,
+                      ),
+                      const SizedBox(height: 12),
+                      if (myJoinedGroups.isEmpty)
+                        _buildEmptyState('You haven\'t joined any groups yet')
+                      else
+                        ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: myJoinedGroups.length,
+                          itemBuilder: (context, index) {
+                            final group = myJoinedGroups[index];
+                            return _GroupTile(
+                              group: group,
+                              actionType: GroupTileAction.view,
+                            );
+                          },
+                        ),
+                      const SizedBox(height: 24),
+
+                      // Section 3: Available Groups
+                      _buildSectionHeader(
+                        context,
+                        'Available Groups',
+                        availableGroups.length,
+                      ),
+                      const SizedBox(height: 12),
+                      if (availableGroups.isEmpty)
+                        _buildEmptyState('No available groups to join')
+                      else
+                        ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: availableGroups.length,
+                          itemBuilder: (context, index) {
+                            final group = availableGroups[index];
+                            return _GroupTile(
+                              group: group,
+                              actionType: GroupTileAction.join,
+                            );
+                          },
+                        ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _buildSectionHeader(BuildContext context, String title, int count) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: Colors.grey.shade200),
+      ),
+      child: Row(
+        children: [
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
+            ),
+          ),
+          const SizedBox(width: 8),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+            decoration: BoxDecoration(
+              color: const Color(0xFFDC143C).withOpacity(0.1),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Text(
+              count.toString(),
+              style: const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFDC143C),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildEmptyState(String message) {
+    return Container(
+      padding: const EdgeInsets.all(24),
+      margin: const EdgeInsets.only(bottom: 12),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.grey.shade200),
+      ),
+      child: Center(
+        child: Column(
+          children: [
+            Icon(Icons.groups_outlined, size: 48, color: Colors.grey.shade400),
+            const SizedBox(height: 12),
+            Text(
+              message,
+              style: TextStyle(
+                color: Colors.grey.shade600,
+                fontSize: 14,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+enum GroupTileAction { view, join }
+
+class _GroupTile extends ConsumerStatefulWidget {
+  final Group group;
+  final GroupTileAction actionType;
+
+  const _GroupTile({
+    required this.group,
+    required this.actionType,
+  });
+
+  @override
+  ConsumerState<_GroupTile> createState() => _GroupTileState();
+}
+
+class _GroupTileState extends ConsumerState<_GroupTile> {
+  bool _isJoining = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final currentUser = ref.watch(authStateChangesProvider).value;
+
+    return Card(
+      margin: const EdgeInsets.only(bottom: 12.0),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      elevation: 1,
+      color: Colors.white,
+      child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        leading: CircleAvatar(
+          radius: 24,
+          backgroundColor: const Color(0xFFDC143C).withOpacity(0.1),
+          child: const Icon(Icons.group, color: Color(0xFFDC143C)),
+        ),
+        title: Text(
+          widget.group.name,
+          style: const TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 16,
+          ),
+        ),
+        subtitle: Padding(
+          padding: const EdgeInsets.only(top: 4),
+          child: Row(
+            children: [
+              Icon(Icons.people, size: 14, color: Colors.grey.shade600),
+              const SizedBox(width: 4),
+              Text(
+                '${widget.group.memberCount} members',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.grey.shade600,
+                ),
+              ),
+            ],
+          ),
+        ),
+        trailing: widget.actionType == GroupTileAction.view
+            ? _buildViewButton(context, currentUser)
+            : _buildJoinButton(context, currentUser),
+      ),
+    );
+  }
+
+  Widget _buildViewButton(BuildContext context, dynamic currentUser) {
+    return ElevatedButton(
+      onPressed: () async {
+        final params = ChatConnectionParams(
+          type: ChatType.group,
+          id: widget.group.id,
+        );
+
+        if (!context.mounted) return;
+
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => IndividualChatPage(
+              group: widget.group,
+              params: params,
+            ),
+          ),
+        );
+      },
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.white,
+        foregroundColor: const Color(0xFFDC143C),
+        elevation: 0,
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+          side: const BorderSide(color: Color(0xFFDC143C), width: 1.5),
+        ),
+      ),
+      child: const Text(
+        'View',
+        style: TextStyle(fontWeight: FontWeight.w600),
+      ),
+    );
+  }
+
+  Widget _buildJoinButton(BuildContext context, dynamic currentUser) {
+    return ElevatedButton(
+      onPressed: _isJoining
+          ? null
+          : () async {
+        if (currentUser == null) return;
+
+        setState(() => _isJoining = true);
+
+        try {
+          await ref
+              .read(joinGroupProvider(widget.group.id).notifier)
+              .joinGroup(groupId: widget.group.id);
+
+          if (!context.mounted) return;
+
+          // Show success message
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Successfully joined ${widget.group.name}'),
+              backgroundColor: Colors.green,
+              duration: const Duration(seconds: 2),
+            ),
+          );
+
+          // Navigate to the group
+          final params = ChatConnectionParams(
+            type: ChatType.group,
+            id: widget.group.id,
+          );
+
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => IndividualChatPage(
+                group: widget.group,
+                params: params,
+              ),
+            ),
+          );
+        } catch (e) {
+          if (!context.mounted) return;
+
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Failed to join group: ${e.toString()}'),
+              backgroundColor: Colors.red,
+              duration: const Duration(seconds: 2),
+            ),
+          );
+        } finally {
+          if (mounted) {
+            setState(() => _isJoining = false);
+          }
+        }
+      },
+      style: ElevatedButton.styleFrom(
+        backgroundColor: const Color(0xFFDC143C),
+        foregroundColor: Colors.white,
+        elevation: 0,
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+      ),
+      child: _isJoining
+          ? const SizedBox(
+        width: 16,
+        height: 16,
+        child: CircularProgressIndicator(
+          strokeWidth: 2,
+          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+        ),
+      )
+          : const Text(
+        'Join',
+        style: TextStyle(fontWeight: FontWeight.w600),
+      ),
+    );
+  }
+}
