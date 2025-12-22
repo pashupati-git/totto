@@ -150,7 +150,7 @@ class PersonalChatCreator extends StateNotifier<PersonalChatCreatorState> {
             await _repository.createGroup(
                 name: otherUserName,
                 guidelines: 'Personal Chat',
-                categoryId: 4,
+                categoryId: 1,
                 roomType: 'F',
             );
 
