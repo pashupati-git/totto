@@ -68,7 +68,7 @@ class ChatController extends _$ChatController
                     //     );
                     //     newMessage = newMessage.copyWith(order: updatedOrder);
                     // }
-
+                    
                     if (newMessage.order?.imageUrl != null && newMessage.order!.imageUrl!.startsWith(ApiConfig.webSocketLegacyHost))
                     {
                         final updatedOrder = newMessage.order!.copyWith(

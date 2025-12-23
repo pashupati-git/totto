@@ -150,7 +150,7 @@ class _WebSocketMessagesProviderElement
       (origin as WebSocketMessagesProvider).params;
 }
 
-String _$webSocketChannelHash() => r'8a5dc3525ddf0c6d2799f502741e4a3483a04fb7';
+String _$webSocketChannelHash() => r'9bfdc3922e4921cf22f0e4a08a5d1c8ee90598b8';
 
 abstract class _$WebSocketChannel
     extends BuildlessAutoDisposeAsyncNotifier<wsc.WebSocketChannel> {

@@ -7,7 +7,6 @@ import 'package:totto/data/models/business_category_model.dart';
 import 'package:totto/data/models/product_model.dart';
 import 'package:totto/data/models/unit_model.dart';
 import 'package:totto/features/marketplace/providers/product_providers.dart';
-import 'package:totto/features/marketplace/my_products_page.dart';
 
 import '../../common/appbar/common_app_bar.dart';
 import '../../common/primary_button.dart';
@@ -49,10 +48,10 @@ class _AddProductPageState extends ConsumerState<AddProductPage>
             _existingImageUrl = widget.productToEdit!.imageUrl;
 
             WidgetsBinding.instance.addPostFrameCallback((_)
-            {
-                if (!mounted) return;
-                _preselectDropdowns();
-            }
+                {
+                    if (!mounted) return;
+                    _preselectDropdowns();
+                }
             );
         }
     }
@@ -104,10 +103,10 @@ class _AddProductPageState extends ConsumerState<AddProductPage>
             if (pickedFile != null)
             {
                 setState(()
-                {
-                    _productImage = pickedFile;
-                    _existingImageUrl = null;
-                }
+                    {
+                        _productImage = pickedFile;
+                        _existingImageUrl = null;
+                    }
                 );
             }
         }
@@ -176,30 +175,21 @@ class _AddProductPageState extends ConsumerState<AddProductPage>
         final categoriesAsync = ref.watch(productCategoriesProvider);
 
         ref.listen<ProductSubmitState>(productSubmitProvider, (previous, next)
-        {
-            if (next.value == ProductSubmitStateValue.success)
             {
-                ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                        content: Text(isEditMode ? 'Product updated successfully!' : 'Product added successfully!'),
-                        backgroundColor: Colors.green,
-                    ),
-                );
-
-                // Navigate to MyProductsPage
-                Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                        builder: (context) => const MyProductsPage(),
-                    ),
-                );
+                if (next.value == ProductSubmitStateValue.success)
+                {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text(isEditMode ? 'Product updated successfully!' : 'Product added successfully!'), backgroundColor: Colors.green),
+                    );
+                    Navigator.of(context)..pop()..pop();
+                }
+                if (next.value == ProductSubmitStateValue.error)
+                {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('Error: ${next.errorMessage}'), backgroundColor: Colors.red),
+                    );
+                }
             }
-            if (next.value == ProductSubmitStateValue.error)
-            {
-                ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Error: ${next.errorMessage}'), backgroundColor: Colors.red),
-                );
-            }
-        }
         );
 
         return Scaffold(
@@ -229,6 +219,19 @@ class _AddProductPageState extends ConsumerState<AddProductPage>
                             error: (err, stack) => Text(l10n.errorCouldNotLoadCategories(err.toString())),
                             data: (categories) => _buildCategoryDropdown(l10n, categories),
                         ),
+                        //const SizedBox(height: 24),
+
+                        //removed catalogs from market place
+                        // _buildFileUploadField(
+                        //     label: l10n.uploadProductCatalogs,
+                        //     hint: l10n.clickToUploadCatalogs,
+                        //     onTap: ()
+                        //     {
+                        //         ScaffoldMessenger.of(context).showSnackBar(
+                        //             const SnackBar(content: Text('Catalog upload is not yet supported.')),
+                        //         );
+                        //     }
+                        // ),
                         const SizedBox(height: 24),
                         _buildImagePickerField(label: l10n.uploadProductImages, hint: l10n.clickToUploadImages),
                         const SizedBox(height: 24),
@@ -335,12 +338,12 @@ class _AddProductPageState extends ConsumerState<AddProductPage>
                         focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: Colors.black54, width: 1.5)),
                     ),
                     items: units.map((unit)
-                    {
-                        return DropdownMenuItem<Unit>(
-                            value: unit,
-                            child: Text(unit.name),
-                        );
-                    }
+                        {
+                            return DropdownMenuItem<Unit>(
+                                value: unit,
+                                child: Text(unit.name),
+                            );
+                        }
                     ).toList(),
                     onChanged: (val) => setState(() => _selectedUnit = val),
                 ),
@@ -366,12 +369,12 @@ class _AddProductPageState extends ConsumerState<AddProductPage>
                         focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: Colors.black54, width: 1.5)),
                     ),
                     items: categories.map((category)
-                    {
-                        return DropdownMenuItem<BusinessCategory>(
-                            value: category,
-                            child: Text(category.name),
-                        );
-                    }
+                        {
+                            return DropdownMenuItem<BusinessCategory>(
+                                value: category,
+                                child: Text(category.name),
+                            );
+                        }
                     ).toList(),
                     onChanged: (val) => setState(() => _selectedCategory = val),
                 ),
@@ -387,49 +390,49 @@ class _AddProductPageState extends ConsumerState<AddProductPage>
                 Text(label, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black87)),
                 const SizedBox(height: 8),
                 if (_productImage == null && _existingImageUrl == null)
-                    InkWell(
-                        onTap: _pickImage,
-                        borderRadius: BorderRadius.circular(12),
-                        child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12), border: Border.all(color: Colors.grey.shade300, width: 1)),
-                            child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                    Text(hint, style: TextStyle(color: Colors.grey.shade400, fontSize: 16)),
-                                    Icon(Icons.image_outlined, color: Colors.grey.shade600),
-                                ],
-                            ),
+                InkWell(
+                    onTap: _pickImage,
+                    borderRadius: BorderRadius.circular(12),
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12), border: Border.all(color: Colors.grey.shade300, width: 1)),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                                Text(hint, style: TextStyle(color: Colors.grey.shade400, fontSize: 16)),
+                                Icon(Icons.image_outlined, color: Colors.grey.shade600),
+                            ],
                         ),
                     ),
+                ),
                 if (_productImage != null || _existingImageUrl != null)
-                    SizedBox(
-                        width: 100,
-                        height: 100,
-                        child: Stack(
-                            children: [
-                                ClipRRect(
-                                    borderRadius: BorderRadius.circular(12),
-                                    child: _productImage != null
-                                        ? Image.file(File(_productImage!.path), width: 100, height: 100, fit: BoxFit.cover)
-                                        : Image.network(_existingImageUrl!, width: 100, height: 100, fit: BoxFit.cover),
-                                ),
-                                Positioned(
-                                    top: 4,
-                                    right: 4,
-                                    child: GestureDetector(
-                                        onTap: () => setState(()
+                SizedBox(
+                    width: 100,
+                    height: 100,
+                    child: Stack(
+                        children: [
+                            ClipRRect(
+                                borderRadius: BorderRadius.circular(12),
+                                child: _productImage != null
+                                    ? Image.file(File(_productImage!.path), width: 100, height: 100, fit: BoxFit.cover)
+                                    : Image.network(_existingImageUrl!, width: 100, height: 100, fit: BoxFit.cover),
+                            ),
+                            Positioned(
+                                top: 4,
+                                right: 4,
+                                child: GestureDetector(
+                                    onTap: () => setState(()
                                         {
                                             _productImage = null;
                                             _existingImageUrl = null;
                                         }
-                                        ),
-                                        child: Container(decoration: const BoxDecoration(color: Colors.black54, shape: BoxShape.circle), child: const Icon(Icons.close, color: Colors.white, size: 16)),
                                     ),
+                                    child: Container(decoration: const BoxDecoration(color: Colors.black54, shape: BoxShape.circle), child: const Icon(Icons.close, color: Colors.white, size: 16)),
                                 ),
-                            ],
-                        ),
+                            ),
+                        ],
                     ),
+                ),
             ],
         );
     }
